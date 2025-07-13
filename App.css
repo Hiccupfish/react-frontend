@@ -1,0 +1,143 @@
+.App {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+.content-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px 0;
+  min-height: calc(100vh - 200px);
+}
+
+.content-box {
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px 40px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.content-box h2,
+.content-box h3 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.btn-primary {
+  background-color: #5cff8b !important;
+  color: #333 !important;
+  font-weight: bold;
+  border: none !important;
+  border-radius: 30px;
+  padding: 12px 30px;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background-color: #4dda76 !important;
+  transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+  border-color: #5cff8b !important;
+  color: #5cff8b !important;
+  border-radius: 30px;
+  padding: 8px 16px;
+  margin: 0 5px;
+}
+
+.btn-outline-primary:hover {
+  background-color: #5cff8b !important;
+  border-color: #5cff8b !important;
+  color: #333 !important;
+}
+
+.account-type-btn {
+  margin: 10px 0;
+  width: 100%;
+}
+
+.account-type-btn.selected {
+  background-color: #4dda76 !important;
+  transform: scale(1.02);
+}
+
+.feature-card {
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.feature-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.swipe-indicator {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.account-selection {
+  margin: 30px 0;
+}
+
+.terms-notice {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.terms-notice a {
+  color: #5cff8b;
+  text-decoration: none;
+}
+
+.terms-notice a:hover {
+  text-decoration: underline;
+}
+
+.alert-danger {
+  color: #fff;
+  background: #e74c3c;
+  padding: 10px 20px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.text-danger {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 5px;
+} 
