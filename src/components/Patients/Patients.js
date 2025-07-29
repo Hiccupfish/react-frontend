@@ -6,7 +6,7 @@ const Patients = () => {
     const [patients, setPatients] = useState([]);
 
     useEffect(() => {
-        fetch('/api/patient')
+                fetch('https://ctrlapiapp.azurewebsites.net/api/patient')
             .then(response => response.json())
             .then(data => setPatients(data))
             .catch(error => console.error('Error fetching patients:', error));
@@ -18,9 +18,9 @@ const Patients = () => {
             <ul className="patients-list">
                 {patients.map(patient => (
                     <li key={patient.patientID} className="patient-item">
-                        <div><strong>Name:</strong> {patient.fullName}</div>
-                        <div><strong>DOB:</strong> {new Date(patient.dateOfBirth).toLocaleDateString()}</div>
-                        <div><strong>Gender:</strong> {patient.gender}</div>
+                        <div><strong>Name:</strong> {patient.FullName}</div>
+                        <div><strong>DOB:</strong> {new Date(patient.DateOfBirth).toLocaleDateString()}</div>
+                        <div><strong>Gender:</strong> {patient.Gender}</div>
                     </li>
                 ))}
             </ul>

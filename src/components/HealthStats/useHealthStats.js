@@ -7,7 +7,7 @@ export const useHealthStats = () => {
     const [form, setForm] = useState({ patientID: '', heartRate: '', bloodPressure: '', temperature: '' });
 
     const fetchHealthStats = useCallback(() => {
-        fetch('/api/healthstats')
+                fetch('https://ctrlapiapp.azurewebsites.net/api/healthstats')
             .then(response => response.json())
             .then(data => {
                 setHealthStats(data);
@@ -29,7 +29,7 @@ export const useHealthStats = () => {
     }, [filter, healthStats]);
 
     const handleDelete = (id) => {
-        fetch(`/api/healthstats/${id}`, { method: 'DELETE' })
+                fetch(`https://ctrlapiapp.azurewebsites.net/api/healthstats/${id}`, { method: 'DELETE' })
             .then(() => fetchHealthStats())
             .catch(error => console.error('Error deleting health stat:', error));
     };
@@ -40,7 +40,7 @@ export const useHealthStats = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('/api/healthstats', {
+                fetch('https://ctrlapiapp.azurewebsites.net/api/healthstats', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ ...form, date: new Date() }),

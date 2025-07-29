@@ -1,7 +1,24 @@
+:root {
+  --background-color-light: #f5f5f5;
+  --content-box-bg-light: white;
+  --text-color-light: #333;
+
+  --background-color-dark: #121212;
+  --content-box-bg-dark: #1e1e1e;
+  --text-color-dark: #ffffff;
+}
+
 .App {
   min-height: 100vh;
-  background-color: #f5f5f5;
   font-family: Arial, sans-serif;
+  background-color: var(--background-color-light);
+  color: var(--text-color-light);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.App.dark {
+  background-color: var(--background-color-dark);
+  color: var(--text-color-dark);
 }
 
 .content-container {
@@ -13,14 +30,20 @@
 }
 
 .content-box {
-  background-color: white;
+  background-color: var(--content-box-bg-light);
   border-radius: 8px;
   padding: 30px 40px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
+  transition: background-color 0.3s ease;
 }
+
+.App.dark .content-box {
+    background-color: var(--content-box-bg-dark);
+}
+
 
 .content-box h2,
 .content-box h3 {
@@ -28,7 +51,7 @@
   font-weight: bold;
   text-align: center;
   margin-bottom: 25px;
-  color: #333;
+  /* Color is inherited from .App */
 }
 
 .form-group {
@@ -43,6 +66,13 @@
   font-size: 16px;
 }
 
+.App.dark .form-control {
+    background-color: #2c2c2c;
+    border-color: #444;
+    color: #ffffff;
+}
+
+/* Green button styles are preserved */
 .btn-primary {
   background-color: #5cff8b !important;
   color: #333 !important;
@@ -93,6 +123,11 @@
   background-color: #f9f9f9;
 }
 
+.App.dark .feature-card {
+    background-color: var(--content-box-bg-dark);
+    border-color: #444;
+}
+
 .feature-navigation {
   display: flex;
   justify-content: center;
@@ -140,4 +175,26 @@
   color: #e74c3c;
   font-size: 14px;
   margin-top: 5px;
-} 
+}
+
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color-dark);
+  margin-left: 1rem;
+}
+
+.theme-toggle-text {
+  margin-left: 0.5rem;
+}
+
+.App.light .theme-toggle-btn {
+    color: var(--text-color-light);
+}
+
+.theme-toggle-btn:hover {
+  color: #5cff8b;
+}

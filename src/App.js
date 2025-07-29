@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import NavMenu from './components/NavMenu/NavMenu';
 import Login from './components/Login/Login';
@@ -11,9 +11,24 @@ import HealthStats from './components/HealthStats/HealthStats';
 import './App.css';
 
 function App() {
+  const [theme, setTheme] = useState('light');
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+  };
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setTheme(savedTheme);
+    }
+  }, []);
+
   return (
-    <div className="App">
-      <NavMenu />
+    <div className={`App ${theme}`}>
+      <NavMenu toggleTheme={toggleTheme} theme={theme} />
       <div className="content-container">
         <Routes>
           <Route path="/" element={<LandingPage />} />

@@ -3,7 +3,7 @@ import './Profile.css';
 
 const updateUserProfile = async (user) => {
   try {
-    const response = await fetch('/api/user/update-email', {
+        const response = await fetch('https://ctrlapiapp.azurewebsites.net/api/user/update-email', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: user.Email }),

@@ -11,7 +11,7 @@ const Appointments = () => {
     const [currentAppointment, setCurrentAppointment] = useState(null); // For editing
 
     const fetchAppointments = () => {
-        fetch('/api/appointment')
+                fetch('https://ctrlapiapp.azurewebsites.net/api/appointment')
             .then(response => response.json())
             .then(data => setAppointments(data))
             .catch(error => console.error('Error fetching appointments:', error));
@@ -57,7 +57,7 @@ const Appointments = () => {
 
     const handleAddEditAppointment = (appointmentData) => {
         const method = appointmentData.appointmentID ? 'PUT' : 'POST';
-        const url = appointmentData.appointmentID ? `/api/appointment/${appointmentData.appointmentID}` : '/api/appointment';
+                const url = appointmentData.appointmentID ? `https://ctrlapiapp.azurewebsites.net/api/appointment/${appointmentData.appointmentID}` : 'https://ctrlapiapp.azurewebsites.net/api/appointment';
 
         fetch(url, {
             method: method,
@@ -82,7 +82,7 @@ const Appointments = () => {
 
     const handleDeleteAppointment = (appointmentID) => {
         if (window.confirm('Are you sure you want to delete this appointment?')) {
-            fetch(`/api/appointment/${appointmentID}`, {
+                        fetch(`https://ctrlapiapp.azurewebsites.net/api/appointment/${appointmentID}`, {
                 method: 'DELETE',
             })
             .then(response => {

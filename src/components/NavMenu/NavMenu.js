@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Menu, X, Home, UserPlus, LogIn, Users, Calendar, Activity } from 'lucide-react';
+import { Menu, X, Home, UserPlus, LogIn, Users, Calendar, Activity, Moon, Sun } from 'lucide-react';
 import './NavMenu.css';
 
-function NavMenu() {
+function NavMenu({ toggleTheme, theme }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
@@ -45,6 +45,12 @@ function NavMenu() {
             );
           })}
         </ul>
+
+        {/* Theme Toggle Button */}
+        <button onClick={toggleTheme} className="theme-toggle-btn">
+          {theme === 'light' ? <Moon className="w-6 h-6" /> : <Sun className="w-6 h-6" />}
+          <span className="theme-toggle-text">{theme === 'light' ? 'Dark Mode' : 'Light Mode'}</span>
+        </button>
 
         {/* Mobile Menu Button */}
         <button 
